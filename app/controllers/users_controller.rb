@@ -13,7 +13,6 @@ class UsersController < ApplicationController
         if @user.save
         else
             flash[:errors] = @user.errors.full_messages
-            render :new
         end
     end
 
