@@ -1,5 +1,45 @@
 {
-  "name": "AirHaH",
+  "name": "airhah",
   "private": true,
-  "dependencies": {}
+  "description": "Michael Kim's Final Project for A/a July 06 2020 NY cohort.",
+  "version": "1.0.0",
+  "main": "index.jsx",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelkim01/AirHaH.git"
+  },
+  "keywords": [],
+  "author": "Michael Y Kim",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.15",
+    "node-loader": "^0.6.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-mock-router": "^1.0.15",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.20.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "webpack-cli": "^3.3.9"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelkim01/AirHaH/issues"
+  },
+  "homepage": "https://github.com/michaelkim01/AirHaH#readme"
 }
