@@ -12,13 +12,13 @@ class Api::UsersController < ApplicationController
 
         if @user.save
         else
-            flash[:errors] = @user.errors.full_messages
+            render json: ['Failed to create user'], status: 403
         end
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:email, :password)
+        params.require(:user).permit(:first_name, :last_name, :birthdate, :email, :password)
     end
 end

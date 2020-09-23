@@ -4,7 +4,9 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            first_name: '',
+            last_name: '',
+            birthdate: new Date(0),
             email: '',
             password: ''
         };
@@ -29,6 +31,29 @@ class Signup extends React.Component {
             <div className='session-form'>
                 <h2>Sign Up!</h2>
                 <form>
+                    <label>First name:
+                        <input
+                            type="text"
+                            value={this.state.first_name}
+                            onChange={this.handleInput('first_name')}
+                        />
+                    </label>
+                    <label>Last name:
+                        <input
+                            type="text"
+                            value={this.state.last_name}
+                            onChange={this.handleInput('last_name')}
+                        />
+                    </label>
+                    Make sure it matches the name on your government ID.
+                    <label>Birthdate:
+                        <input
+                            type="date"
+                            value={this.state.birthdate}
+                            onChange={this.handleInput('birthdate')}
+                        />
+                    </label>
+                    To sign up, you need to be at least 18. Your birthday won’t be shared with other people who use Airbnb.
                     <label>Email:
                         <input
                             type="text"
@@ -36,6 +61,7 @@ class Signup extends React.Component {
                             onChange={this.handleInput('email')}
                         />
                     </label>
+                    We'll email you trip confirmations and receipts.
                     <label>Password:
                         <input
                             type="password"
@@ -43,7 +69,10 @@ class Signup extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </label>
-                    <button conClick={this.handleSubmit}>Sign Up</button>
+
+                    By selecting Agree and continue below, I agree to Airbnb’s Terms of Service, Payments Terms of Service, Privacy Policy, and Nondiscrimination Policy.
+
+                    <button onClick={this.handleSubmit}>Agree and continue</button>
                 </form>
             </div>
         );
