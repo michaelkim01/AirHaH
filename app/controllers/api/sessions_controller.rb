@@ -13,7 +13,8 @@ class Api::SessionsController < ApplicationController
         if @user
             log_in!(@user)
         else
-            flash[:errors] = ['Invalid credentials']
+            # flash[:errors] = ['Invalid credentials']
+            render json: ['Invalid credentials'], status: 403
         end
     end
 
