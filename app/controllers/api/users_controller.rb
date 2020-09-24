@@ -8,8 +8,9 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
+            log_in!(@user)
         else
-            render json: ['Failed to create user'], status: 403
+            render json: @user.errors.full_messages, status: 403
         end
     end
 
