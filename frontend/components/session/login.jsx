@@ -43,7 +43,7 @@ class Login extends React.Component {
                         />
                     </label>
 
-                    <button conClick={this.handleSubmit}>Log in</button>
+                    <button onClick={this.handleSubmit}>Log in</button>
                 </form>
 
                 Forgot password?
