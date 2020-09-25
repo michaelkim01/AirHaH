@@ -9,13 +9,8 @@ import Modal from './modal/modal';
 export default () => (
     <div>
         <Modal />
-        <header>
-            <Link to='/' className="header-link">
-                <h1>AirHah</h1>
-            </Link>
-        </header>
-        <Switch>
+        <header className="content-header">
             <Route path="/" component={NavBarContainer} />
-        </Switch>
+        </header>
     </div>
 );

@@ -1,0 +1,56 @@
+.session-form { 
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 23px;
+}
+
+.session-form > .header {
+    justify-content: center;
+}
+
+.session-form > .header > p{
+    font-size: 18px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.session-form input {
+    height: 56px;
+    width: 500px;
+    border-radius: 10px;
+    border-color: lightgray;
+}
+
+.session-form text {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(100, 100, 100);
+}
+
+.close-button {
+    position: absolute;
+    background: transparent;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+    top: 24px;    
+    left: 24px;
+}
+
+.close-button:hover {
+    background-color: lightgrey;
+}
+
+.session-form .submit-button {
+    height: 45px;
+    width: 500px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.session-form Link {
+    color: black;
+}

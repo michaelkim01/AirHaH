@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
@@ -23,34 +24,52 @@ class Login extends React.Component {
             .then(this.props.closeModal);
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render () {
         return (
             <div className='session-form'>
-                <h2>Log in</h2>
+                <button className="close-button" onClick={this.props.closeModal}>X</button>
+                <header>
+                    <p>Log in</p>
+                </header>
                 <form>
-                    <label>Email:
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                        />
-                    </label>
-
-                    <button onClick={this.handleSubmit}>Log in</button>
+                    <input
+                        placeholder="Email"
+                        type="text"
+                        value={this.state.email}
+                        onChange={this.handleInput('email')}
+                    />
+                    <input
+                        placeholder="Password"
+                        type="password"
+                        value={this.state.password}
+                        onChange={this.handleInput('password')}
+                    />
+                    {this.renderErrors()}
+                    <button className="submit-button" onClick={this.handleSubmit}>Log in</button>
                 </form>
 
-                Forgot password?
-
-                More login options
-
-                Don't have an account? Sign up
+                <Link to='/'>Forgot password?</Link>
+                <Link to='/'>More login options</Link>
+                <div>
+                    <text>Don't have an account?</text>
+                    <Link to='/'>Sign up</Link>
+                </div>
             </div>
         );
     }
