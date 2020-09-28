@@ -16,7 +16,7 @@
 #  updated_at   :datetime         not null
 #
 class Housing < ApplicationRecord
-    validates :name, :host_id, :address, :housing_type, :bedrooms, :beds, :baths, :guests, :price
+    validates :name, :host_id, :address, :housing_type, :bedrooms, :beds, :baths, :guests, :price, presence: true
     validates :address, uniqueness: true, inclusion: { in: ["Entire place", "Private room", "Shared room"] }
 
     has_one_attached :photo
