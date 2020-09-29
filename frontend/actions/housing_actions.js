@@ -1,6 +1,6 @@
 import {
-    getHousings,
-    getHousing,
+    fetchHousings,
+    fetchHousing,
 } from '../utils/housing_util';
 
 export const RECEIVE_HOUSINGS = 'RECEIVE_HOUSINGS';
@@ -17,13 +17,13 @@ export const receiveHousing = housing => ({
 });
 
 export const getHousings = dispatch => (
-    getHousings().then(housings => (
+    fetchHousings().then(housings => (
         dispatch(receiveHousings(housings))
     ))
 );
 
 export const getHousing = id => dispatch => (
-    getHousing(id).then(payload => (
+    fetchHousing(id).then(payload => (
         dispatch(receiveHousing(payload))
     ))
 );

@@ -11,11 +11,11 @@ export default () => (
     <div>
         <Modal />
         <header className="content-header">
-            <Link to="/housings" className="housings-index-link">
-                <h1>Housings</h1>
-            </Link>
+            <Route path="/" component={NavBarContainer} />
         </header>
-        <Route path="/" component={NavBarContainer} />
+        <Link to="/housings" className="housings-index-link">
+                <h1>Housings</h1>
+        </Link>
         <Route path="/housings" component={HousingIndexContainer} />
     </div>
 );
