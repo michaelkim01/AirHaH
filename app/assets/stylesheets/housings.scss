@@ -1,3 +1,30 @@
 // Place all the styles related to the housings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.housing-index img{
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.housing-index p {
+    margin: 0%;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(100, 100, 100);
+}
+
+.housing-element{
+    display: flex;
+    margin: 10px;
+    border-top: rgb(100, 100, 100);
+    border-bottom: rgb(100, 100, 100);
+}
+
+.housing-index #housing-name{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}

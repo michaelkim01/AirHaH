@@ -9,9 +9,9 @@ const housingsReducer = (state = {}, action) => {
     Object.freeze(state)
     switch(action.type) {
         case RECEIVE_HOUSINGS:
-            return action.benches;
+            return action.housings;
         case RECEIVE_HOUSING:
-            const newHousing = { [action.housing.id]: action.bench };
+            const newHousing = { [action.housing.id]: action.housing };
             return merge({}, state, newHousing);
         default:
             return state;

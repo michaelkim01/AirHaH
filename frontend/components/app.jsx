@@ -6,16 +6,16 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import { Link, Switch } from 'react-router-dom';
 import Modal from './modal/modal';
 import HousingIndexContainer from './housing/housing_index_container';
+import Home from './home/home';
 
 export default () => (
     <div>
         <Modal />
-        <header className="content-header">
-            <Route path="/" component={NavBarContainer} />
-        </header>
+        <Route exact path="/" component={Home} />
+        <Route path="/" component={NavBarContainer} />
         <Link to="/housings" className="housings-index-link">
                 <h1>Housings</h1>
         </Link>
-        <Route path="/housings" component={HousingIndexContainer} />
+        <Route exact path="/housings" component={HousingIndexContainer} />
     </div>
 );

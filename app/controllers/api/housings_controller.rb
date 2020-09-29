@@ -5,6 +5,7 @@ class Api::HousingsController < ApplicationController
 
     def index
         @housings = Housing.all
+        render :index
     end
 
 end

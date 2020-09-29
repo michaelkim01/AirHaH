@@ -17,8 +17,8 @@
 #
 class Housing < ApplicationRecord
     validates :name, :host_id, :address, :housing_type, :bedrooms, :beds, :baths, :guests, :price, presence: true
-    validates :address, uniqueness: true, 
-    # validates :host_id, inclusion: { in: ["Entire place", "Private room", "Shared room"] }
+    validates :address, uniqueness: true
+    validates :housing_type, inclusion: { in: ["Entire place", "Private room", "Shared room"] }
 
     has_one_attached :photo
 
