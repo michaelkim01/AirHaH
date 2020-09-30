@@ -4,9 +4,9 @@ import { getHousing } from '../../actions/housing_actions';
 import HousingShow from './housing_show';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return{
-        housingId: parseInt(ownProps.match.params.housingId)
+        housingId: parseInt(ownProps.match.params.housingId),
+        housing: state.housings[ownProps.match.params.housingId]
     }
 };
 

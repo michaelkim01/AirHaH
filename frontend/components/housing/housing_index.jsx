@@ -11,7 +11,6 @@ class HousingIndex extends React.Component {
     }
 
     handleClick(housingId) {
-        // debugger
         this.props.history.push(`/housings/${housingId}`);
     }
 

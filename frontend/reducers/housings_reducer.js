@@ -11,8 +11,7 @@ const housingsReducer = (state = {}, action) => {
         case RECEIVE_HOUSINGS:
             return action.housings;
         case RECEIVE_HOUSING:
-            const newHousing = { [action.housing.id]: action.housing };
-            return merge({}, state, newHousing);
+            return merge({}, state, action.housing);
         default:
             return state;
     }

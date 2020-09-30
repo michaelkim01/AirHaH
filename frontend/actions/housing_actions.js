@@ -7,7 +7,6 @@ export const RECEIVE_HOUSINGS = 'RECEIVE_HOUSINGS';
 export const RECEIVE_HOUSING = 'RECEIVE_HOUSING';
 
 export const receiveHousings = housings => {
-    // debugger
     return {
         type: RECEIVE_HOUSINGS,
         housings

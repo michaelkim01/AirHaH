@@ -6,24 +6,22 @@ class HousingShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.getHousing(this.props.housingId);
     }
 
     render() {   
-        debugger
+        const housing = this.props.housing
+        if (!housing) return null;
         return (
-            <div className="housing-show">
-                <h1>Housings Show: </h1>
-                    <div className="housing-element" key={housingId}>
-                        <img src={housing.photoUrl} />
-                        <div>
-                            <p>{housing.housing_type} in {housing.address}</p>
-                            <p id="housing-name" >{housing.name}</p>
-                            <p>{housing.guests} guests  {housing.bedrooms} bedroom/s {housing.beds} bed/s {housing.baths} bath/s</p>
-                            <p id="housing-price">${housing.price} / night</p>
-                        </div>
-                    </div>
+            <div className="housing-show" key={housing.id}>                
+                <p id="housing-name" >{housing.name}</p>
+                <p>{housing.address}</p>
+                <img src={housing.photoUrl} />
+                <div>
+                    <p id="host-info">{housing.housing_type} hosted by {housing.host.first_name} {housing.host.last_name} </p>
+                    <p>{housing.guests} guests  {housing.bedrooms} bedroom/s {housing.beds} bed/s {housing.baths} bath/s</p>
+                </div>
+                <p id="housing-price">${housing.price} / night</p>
             </div>
         )}
 };

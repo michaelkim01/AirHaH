@@ -2,7 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.housing-index img{
+.housing-show {
+    margin-top: 2%;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.housing-show #host-info {
+    margin-top: 3%;
+    margin-bottom: 1%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.housing-show #housing-name{
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.housing-show p {
+    margin: 0%;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(100, 100, 100);
+}
+
+.housing-show img {
+    margin-top: 3%;
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.housing-index img {
     height: 200px;
     width: 300px;
     border-radius: 15px;

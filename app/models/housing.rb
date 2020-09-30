@@ -22,4 +22,9 @@ class Housing < ApplicationRecord
 
     has_one_attached :photo
 
+    belongs_to :host,
+        primary_key: :id,
+        foreign_key: :host_id,
+        class_name: :User
+
 end
