@@ -19,3 +19,4 @@ demo_housing3 = Housing.create(:name => "Beachfront Roommates", :host_id => 2, :
 
 demo_housing1.photo.attach(io: URI.open('https://airhah-seeds.s3.us-east-2.amazonaws.com/housing1.jpg'), filename: 'housing1.jpg')
 demo_housing2.photo.attach(io: URI.open('https://airhah-seeds.s3.us-east-2.amazonaws.com/housing2.jpg'), filename: 'housing2.jpg')
+demo_housing3.photo.attach(io: URI.open('https://airhah-seeds.s3.us-east-2.amazonaws.com/housing3.jpg'), filename: 'housing3.jpg')

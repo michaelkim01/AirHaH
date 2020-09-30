@@ -40,10 +40,13 @@
 
 .nav-bar {
     position: sticky;
-    top: 0;
-    padding: 15px;
+    top: 0%;
+    padding: 0px;
     display: flex;
     justify-content: space-around;
+    background-color: white;
+    height: 20;
+    font-size: 10px;
 }
 
 .content-header {

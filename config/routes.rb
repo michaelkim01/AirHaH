@@ -4,6 +4,8 @@
 #                      root GET    /                                                                                        static_pages#root
 #                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
 #                  api_user GET    /api/users/:id(.:format)                                                                 api/users#show {:format=>:json}
+#              api_housings GET    /api/housings(.:format)                                                                  api/housings#index {:format=>:json}
+#               api_housing GET    /api/housings/:id(.:format)                                                              api/housings#show {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show

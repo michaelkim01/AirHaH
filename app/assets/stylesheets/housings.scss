@@ -23,8 +23,15 @@
     border-bottom: rgb(100, 100, 100);
 }
 
-.housing-index #housing-name{
+#housing-name{
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
+}
+
+#housing-price{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
 }
