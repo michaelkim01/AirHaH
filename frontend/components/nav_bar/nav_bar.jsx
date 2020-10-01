@@ -16,7 +16,7 @@ export default ({ currentUser, logout, openModal }) => {
 
     return (    
         <header className="nav-bar">
-            <Link to='/' className="header-link">
+            <Link to='/' id="header-link">
                 <h1>AirHah</h1>
             </Link>
             <div>

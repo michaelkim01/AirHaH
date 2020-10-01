@@ -17,7 +17,7 @@ class HousingIndex extends React.Component {
     render() {   
     return (
         <div className="housing-index">
-            <h1>Housings Index: </h1>
+            <h1>Stays in City One: </h1>
             {this.props.housings.map(housing => (
                 <div className="housing-element" key={housing.id} onClick={() => this.handleClick(housing.id)}>
                     <img src={housing.photoUrl} />

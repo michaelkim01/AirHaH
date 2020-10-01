@@ -1,0 +1,91 @@
+#home-page .content-header {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 550px;
+    width: 100%;
+    background-image: url(treehouse.webp);
+    background-size: cover;
+}
+
+#home-page .content-header div {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 5%
+}
+
+#home-page #settle-in {
+    width: 320px;
+}
+
+#home-page #cards-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 15px;
+    padding-bottom: 50px;
+}
+
+#home-page .card {
+    position: relative;
+    width: 32%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0;
+}
+
+#home-page .card img {
+    width: 100%;
+    height: 70%;
+}
+
+#home-page .card div {
+    height: 30%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#home-page .card h3 {
+    margin: 0%;
+}
+
+#home-page .card p {
+    margin: 0%;
+    font-size: 12px;
+}
+
+#home-page .content-header button {
+    border-radius: 6px;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    font-weight: bold;
+    border: 0;
+}
+
+#home-page footer {
+    padding-left: 3%;
+    padding-right: 3%;
+    align-items: center;
+    display: flex;
+    height: 65px;
+    display: flex;
+    background-color: lightgrey;
+    justify-content: space-between;
+}
+
+#home-page footer p {
+    margin-left: 10px;
+}
+
+#home-page #left-div {
+    display: flex;
+    font-size: 12px;
+}
+
+#home-page #right-div {
+    display: flex;
+    font-size: 14px;
+}
