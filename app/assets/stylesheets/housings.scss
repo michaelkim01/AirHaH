@@ -1,6 +1,23 @@
 // Place all the styles related to the housings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.housing-index-page {
+    display: flex;
+    // position: relative;
+}
+
+#map {
+    position: fixed;
+    left: 55%;
+    top: 10%;
+    width: 45%;
+    height: 100%;
+    background-color: grey;
+}
+
+.housing-index {
+    width: 55%;
+}
 
 .housing-show {
     margin-top: 2%;
