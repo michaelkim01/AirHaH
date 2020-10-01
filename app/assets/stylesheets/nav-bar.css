@@ -1,14 +1,17 @@
 .nav-bar {
     position: sticky;
-    width: 100%;
+    width: 90%;
     top: 0%;
-    padding: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: white;
-    height: 20;
+    height: 64px;
     font-size: 10px;
+    align-items: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    z-index: 9;
 }
 
 #header-link {
