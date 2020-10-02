@@ -5,10 +5,13 @@ class HousingShow extends React.Component {
         super(props);
         this.state = {
             rating: 5,
-            body: ""
+            body: "",
+            start_date: new Date(0),
+            end_date: new Date(0)
         };
         this.mapNode = React.createRef();
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReviewFormSubmit = this.handleReviewFormSubmit.bind(this);
+        this.handleBookingFormSubmit = this.handleBookingFormSubmit.bind(this);
     }
 
     refresh() {
@@ -22,7 +25,7 @@ class HousingShow extends React.Component {
         // const marker = new google.maps.Marker({position: location, map: map});
     }
 
-    handleSubmit(e) {
+    handleReviewFormSubmit(e) {
         e.preventDefault();
         const housingId = parseInt(this.props.match.params.housingId);
         const authorId = window.currentUser.id;
@@ -30,8 +33,19 @@ class HousingShow extends React.Component {
            housing_id: housingId,
            author_id: authorId
         });
-        debugger
         this.props.createReview(review);
+        this.refresh();
+    }
+
+    handleBookingFormSubmit(e) {
+        e.preventDefault();
+        const housingId = parseInt(this.props.match.params.housingId);
+        const guestId = window.currentUser.id;
+        const booking = Object.assign({}, this.state, {
+           housing_id: housingId,
+           guest_id: guestId
+        });
+        this.props.createBooking(booking);
         this.refresh();
     }
 
@@ -44,7 +58,7 @@ class HousingShow extends React.Component {
         if (!housing) return null;
         return (
             <div className="housing-show" key={housing.id}>                
-                <div>
+                <div className="housing">
                     <p id="housing-name" >{housing.name}</p>
                     <div className="housing-name-header">
                         <div className="average-rating">
@@ -62,7 +76,45 @@ class HousingShow extends React.Component {
                         <h4 id="housing-price">${housing.price} / night</h4>
                     </div>
                 </div>
-            
+                <h2>Reservations</h2>
+                <div className="bookings">
+                    <div className="bookings-list">
+                        {this.props.housing.bookings.map(booking => (
+                            <div className="booking-element" key={booking.id}>
+                                <div className="booking-guest">
+                                    <div className="guest-info">
+                                        <h4>{this.props.housing[booking.id].guest.first_name} </h4>
+                                    </div>
+                                </div>
+                                <div className="booking-body">
+                                    <h5>From {booking.start_date}</h5>
+                                    <h5>To {booking.end_date}</h5>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    {window.currentUser 
+                        ? <div className="booking-form">
+                            <form onSubmit={this.handleBookingFormSubmit}>
+                                <label>CHECK-IN</label>
+                                <input
+                                    type="date"
+                                    value={this.state.start_date}
+                                    onChange={this.update("start_date")}
+                                />
+                                <label>CHECK-OUT</label>
+                                <input
+                                    type="date"
+                                    value={this.state.end_date}
+                                    onChange={this.update("end_date")}
+                                />
+                                <input type="submit" />
+                            </form>
+                        </div>
+                        : <div></div>
+                    }
+                </div>
+
                 <div className="reviews">
                     <div className="average-rating">
                         <i class="fas fa-star"></i>
@@ -87,7 +139,7 @@ class HousingShow extends React.Component {
                 </div>
                 {window.currentUser 
                     ? <div className="review-form">
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleReviewFormSubmit}>
                             <label>Rating</label>
                             <input
                                 type="number"

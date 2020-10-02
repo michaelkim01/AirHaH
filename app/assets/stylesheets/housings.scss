@@ -1,9 +1,59 @@
 // Place all the styles related to the housings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bookings {
+    padding: 5px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 150px;
+    border-bottom: 1px solid grey;
+}
+
+.bookings-list {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.booking-element{
+    margin: 5px;
+    padding: 5px;
+    width: 40%;
+    height: 60px;
+    border: 1px solid grey;
+}
+
+.booking-body {
+    margin-top: 4px;
+}
+
+.booking-body h5 {
+    margin: 0;
+}
+
+.booking-form {
+    position: absolute;
+    right: 5%;
+    width: 30%;
+    height: 130px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: thin;
+}
+
+.booking-form form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .housing-index-page {
     display: flex;
 }
+
 .review-form form{
     display: flex;
     align-items: flex-start;
@@ -23,9 +73,17 @@
     display: flex;
     align-items: center;
 }
+
+.housing {
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
 .housing-element .housing-info {
+    display: flex;
     position: relative;
     width: 100%;
+    padding: 5px;
 }
 
 .housing-element .housing-info .head{
@@ -202,5 +260,6 @@
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    
+    position: absolute;
+    right: 15%;
 }
