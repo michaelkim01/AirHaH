@@ -9,9 +9,9 @@ class HousingIndex extends React.Component {
 
     componentDidMount() {
         this.props.getHousings();
-        const newyork = {lat: 40.7125419, lng: -74.047511};
-        this.map = new google.maps.Map(this.mapNode.current, {zoom: 10, center: newyork});
-        const marker = new google.maps.Marker({position: newyork, map: this.map});
+        const newYork = {lat: 40.7125419, lng: -74.047511};
+        this.map = new google.maps.Map(this.mapNode.current, {zoom: 10, center: newYork});
+        const marker = new google.maps.Marker({position: newYork, map: this.map});
     }
 
     handleClick(housingId) {

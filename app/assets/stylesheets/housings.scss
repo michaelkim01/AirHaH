@@ -11,6 +11,22 @@
     align-items: center;;
 }
 
+.housing-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.housing-name-header {
+    display: flex;
+    align-items: center;
+}
+
+.housing-name-header > .average-rating {
+    font-size: 11px;
+    margin-right: 1%;
+}
+
 .review-author {
     display: flex;
     margin-bottom: 10px;
@@ -52,19 +68,26 @@
     font-size: 12px !important;
 }
 
-.housing-show .average-rating i{
+.average-rating i{
     position: relative;
-    bottom: 3px;
+    bottom: 1%;
     margin-right: 5px;
 }
 
-#map {
+.housing-show #map {
+    position: fixed !important;
+    bottom: 10%;
+    width: 80%;
+    height: 30%;
+    background-color: grey;
+}
+
+.housing-index-page #map {
     position: fixed !important;
     left: 55%;
     top: 10%;
     width: 45%;
     height: 100%;
-    background-color: grey;
 }
 
 .housing-index {
@@ -137,7 +160,9 @@
 }
 
 #housing-price{
-    font-size: 15px;
+    position: absolute;
+    right: 10%;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-weight: bold;

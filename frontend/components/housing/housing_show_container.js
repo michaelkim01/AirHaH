@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getHousing } from '../../actions/housing_actions';
+import { getHousing, createReview } from '../../actions/housing_actions';
 import HousingShow from './housing_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +11,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return{getHousing: id => dispatch(getHousing(id))}
+    return{
+        getHousing: id => dispatch(getHousing(id)),
+        createReview: review => dispatch(createReview(review))
+    }
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HousingShow));
