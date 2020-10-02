@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_190505) do
+ActiveRecord::Schema.define(version: 2020_10_01_213857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2020_10_01_190505) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.integer "housing_id", null: false
+    t.integer "guest_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["housing_id", "end_date"], name: "index_bookings_on_housing_id_and_end_date", unique: true
+    t.index ["housing_id", "start_date"], name: "index_bookings_on_housing_id_and_start_date", unique: true
+  end
+
   create_table "housings", force: :cascade do |t|
     t.string "name", null: false
     t.integer "host_id", null: false
@@ -55,6 +66,18 @@ ActiveRecord::Schema.define(version: 2020_10_01_190505) do
     t.index ["baths", "guests", "price"], name: "index_housings_on_baths_and_guests_and_price"
     t.index ["bedrooms", "beds"], name: "index_housings_on_bedrooms_and_beds"
     t.index ["host_id", "housing_type"], name: "index_housings_on_host_id_and_housing_type"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "body", null: false
+    t.integer "author_id", null: false
+    t.integer "housing_id", null: false
+    t.integer "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id", "housing_id"], name: "index_reviews_on_author_id_and_housing_id", unique: true
+    t.index ["author_id"], name: "index_reviews_on_author_id"
+    t.index ["housing_id"], name: "index_reviews_on_housing_id"
   end
 
   create_table "users", force: :cascade do |t|
