@@ -19,10 +19,13 @@ class HousingShow extends React.Component {
     }    
 
     componentDidMount() {
-        this.props.getHousing(this.props.housingId);
-        // const location = {lat: parseFloat(this.props.housing.lat), lng: parseFloat(this.props.housing.lng)};
-        // const map = new google.maps.Map(this.mapNode.current, {zoom: 12, center: location});
-        // const marker = new google.maps.Marker({position: location, map: map});
+        const housingId = this.props.housingId
+        this.props.getHousing(housingId).then((action) => {
+            const housing = action.housing[housingId];
+            const location = {lat: parseFloat(housing.lat), lng: parseFloat(housing.lng)};
+            this.map = new google.maps.Map(this.mapNode.current, {zoom: 12, center: location});
+            const marker = new google.maps.Marker({position: location, map: this.map});
+        });
     }
 
     handleReviewFormSubmit(e) {
@@ -62,7 +65,7 @@ class HousingShow extends React.Component {
                     <p id="housing-name" >{housing.name}</p>
                     <div className="housing-name-header">
                         <div className="average-rating">
-                            <i class="fas fa-star"></i>
+                            <i className="fas fa-star"></i>
                             <h3>{housing.average_rating} ({housing.reviews.length})</h3>
                         </div>
                         <p>{housing.address}</p>
@@ -117,7 +120,7 @@ class HousingShow extends React.Component {
 
                 <div className="reviews">
                     <div className="average-rating">
-                        <i class="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
                         <h3>{housing.average_rating} ({housing.reviews.length} reviews)</h3>
                     </div>
                     <div className="review-element-container">

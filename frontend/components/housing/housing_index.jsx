@@ -8,10 +8,11 @@ class HousingIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getHousings();
-        const newYork = {lat: 40.7125419, lng: -74.047511};
-        this.map = new google.maps.Map(this.mapNode.current, {zoom: 10, center: newYork});
-        const marker = new google.maps.Marker({position: newYork, map: this.map});
+        this.props.getHousings().then((action) => {
+            const newYork = {lat: 40.7125419, lng: -74.047511};
+            this.map = new google.maps.Map(this.mapNode.current, {zoom: 10, center: newYork});
+            const marker = new google.maps.Marker({position: newYork, map: this.map});
+        });
     }
 
     handleClick(housingId) {
@@ -34,7 +35,7 @@ class HousingIndex extends React.Component {
                             </div>
                             <div className="rating-and-price">
                                 <div className="average-rating">
-                                    <i class="fas fa-star"></i>
+                                    <i className="fas fa-star"></i>
                                     <h3>{housing.average_rating} ({housing.reviews.length})</h3>
                                 </div>
                                 <p id="housing-price">${housing.price} / night</p>

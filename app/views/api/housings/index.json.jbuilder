@@ -1,7 +1,7 @@
 @housings.each do |housing|
     json.set! housing.id do
         json.extract! housing, :id, :name, :host_id, :address, :housing_type, :bedrooms, :beds, :baths, :guests, :price, :city, :lat, :lng, :host, :reviews, :bookings
-        json.average_rating housing.average_rating
+        json.average_rating housing.average_rating.round(2)
         if housing.reviews
             housing.reviews.each do |review|
                 json.set! review.id do

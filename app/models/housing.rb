@@ -41,6 +41,7 @@ class Housing < ApplicationRecord
         class_name: :Booking
 
     def average_rating
-        reviews.average(:rating)
+        average = reviews.average(:rating)
+        # average.round(2)
     end
 end
