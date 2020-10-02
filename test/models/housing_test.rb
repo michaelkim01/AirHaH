@@ -14,6 +14,9 @@
 #  price        :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  city         :string           not null
+#  lat          :integer          not null
+#  lng          :integer          not null
 #
 require 'test_helper'
 

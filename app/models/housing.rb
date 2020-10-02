@@ -14,6 +14,9 @@
 #  price        :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  city         :string           not null
+#  lat          :integer          not null
+#  lng          :integer          not null
 #
 class Housing < ApplicationRecord
     validates :name, :host_id, :address, :housing_type, :bedrooms, :beds, :baths, :guests, :price, :city, :lat, :lng, presence: true
@@ -27,4 +30,12 @@ class Housing < ApplicationRecord
         foreign_key: :host_id,
         class_name: :User
 
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :housing_id,
+        class_name: :Review
+
+    def average_rating
+        reviews.average(:rating)
+    end
 end

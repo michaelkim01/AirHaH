@@ -11,3 +11,11 @@ export const fetchHousing = id => (
         url: `api/housings/${id}`
     })
 );
+
+export const makeReview = review => (
+    $.ajax({
+        method: 'POST',
+        url: 'api/reviews',
+        data: { review }
+    })
+);

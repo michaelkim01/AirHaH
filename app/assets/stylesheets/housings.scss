@@ -3,7 +3,59 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .housing-index-page {
     display: flex;
-    // position: relative;
+}
+
+.housing-show .average-rating {
+    position: relative;
+    display: flex;
+    align-items: center;;
+}
+
+.review-author {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.review-author .author-info {
+    margin-left: 10px;
+}
+
+.review-element-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.review-element {
+    width: 45%;
+}
+.review-author h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.review-body h5 {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.review-body h6 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.housing-show h4 {
+    margin: 0;
+}
+
+.review-element p {
+    font-size: 12px !important;
+}
+
+.housing-show .average-rating i{
+    position: relative;
+    bottom: 3px;
+    margin-right: 5px;
 }
 
 #map {
