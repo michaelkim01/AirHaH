@@ -26,6 +26,7 @@ class Login extends React.Component {
 
     componentWillUnmount() {
         this.props.removeErrors();
+        window.location.reload(false);
     }
 
     renderErrors() {

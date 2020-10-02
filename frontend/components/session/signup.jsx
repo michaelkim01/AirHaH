@@ -10,7 +10,6 @@ class Signup extends React.Component {
             email: '',
             password: ''
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -40,6 +39,7 @@ class Signup extends React.Component {
 
     componentWillUnmount() {
         this.props.removeErrors();
+        window.location.reload(false);
     }
 
     render () {

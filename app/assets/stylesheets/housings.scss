@@ -4,6 +4,19 @@
 .housing-index-page {
     display: flex;
 }
+.review-form form{
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+}
+
+.review-form input{
+    margin: 10px;
+}
+
+.review-form label{
+    margin: 10px;
+}
 
 .housing-show .average-rating {
     position: relative;
@@ -38,6 +51,7 @@
 
 .review-element-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
 }
@@ -75,10 +89,10 @@
 }
 
 .housing-show #map {
-    position: fixed !important;
-    bottom: 10%;
-    width: 80%;
-    height: 30%;
+    position: relative !important;
+    bottom: 0%;
+    width: 100%;
+    height: 400px;
     background-color: grey;
 }
 

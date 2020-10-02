@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_213857) do
+ActiveRecord::Schema.define(version: 2020_10_02_072555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2020_10_01_213857) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city", null: false
-    t.integer "lat", null: false
-    t.integer "lng", null: false
+    t.decimal "lat", precision: 10, scale: 6, null: false
+    t.decimal "lng", precision: 10, scale: 6, null: false
     t.index ["address"], name: "index_housings_on_address", unique: true
     t.index ["baths", "guests", "price"], name: "index_housings_on_baths_and_guests_and_price"
     t.index ["bedrooms", "beds"], name: "index_housings_on_bedrooms_and_beds"

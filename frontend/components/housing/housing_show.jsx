@@ -9,17 +9,16 @@ class HousingShow extends React.Component {
         };
         this.mapNode = React.createRef();
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.refresh = this.refresh.bind(this);
     }
 
     refresh() {
-        this.props.history.push(`/housings/${this.props.match.params.housingId}`);
+        window.location.reload(false);
     }    
 
     componentDidMount() {
         this.props.getHousing(this.props.housingId);
-        // const location = {lat: this.props.housing.lat, lng: this.props.housing.lng};
-        // const map = new google.maps.Map(this.mapNode.current, {zoom: 10, center: location});
+        // const location = {lat: parseFloat(this.props.housing.lat), lng: parseFloat(this.props.housing.lng)};
+        // const map = new google.maps.Map(this.mapNode.current, {zoom: 12, center: location});
         // const marker = new google.maps.Marker({position: location, map: map});
     }
 
@@ -86,25 +85,30 @@ class HousingShow extends React.Component {
                         ))}
                     </div>
                 </div>
-                <div className="review-form">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>Rating</label>
-                        <input
-                            type="number"
-                            value={this.state.rating}
-                            onChange={this.update("rating")}
-                        />
-                        <label>Comment</label>
-                        <textarea
-                            cols="30"
-                            rows="10"
-                            value={this.state.body}
-                            onChange={this.update("body")}
-                        />
-                        <input type="submit" />
-                    </form>
-                </div>
-                {/* <div id="map" ref={this.mapNode}></div> */}
+                {window.currentUser 
+                    ? <div className="review-form">
+                        <form onSubmit={this.handleSubmit}>
+                            <label>Rating</label>
+                            <input
+                                type="number"
+                                min="1"
+                                max="5"
+                                value={this.state.rating}
+                                onChange={this.update("rating")}
+                            />
+                            <label>Comment</label>
+                            <textarea
+                                cols="80"
+                                rows="10"
+                                value={this.state.body}
+                                onChange={this.update("body")}
+                            />
+                            <input type="submit" />
+                        </form>
+                    </div>
+                    : <div></div>
+                }
+                <div id="map" ref={this.mapNode}></div>
             </div>
         )}
 };
