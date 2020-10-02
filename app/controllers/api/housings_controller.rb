@@ -3,6 +3,7 @@ class Api::HousingsController < ApplicationController
         @housing = Housing.find(params[:id])
         @host = @housing.host
         @reviews = @housing.reviews
+        @bookings = @housing.bookings
         render :show
     end
 

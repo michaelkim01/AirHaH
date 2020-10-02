@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getHousing, createReview } from '../../actions/housing_actions';
+import { getHousing, createReview, createBooking } from '../../actions/housing_actions';
 import HousingShow from './housing_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return{
         getHousing: id => dispatch(getHousing(id)),
-        createReview: review => dispatch(createReview(review))
+        createReview: review => dispatch(createReview(review)),
+        createBooking: booking => dispatch(createBooking(booking))
     }
 };
 

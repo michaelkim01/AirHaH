@@ -1,12 +1,14 @@
 import {
     fetchHousings,
     fetchHousing,
-    makeReview
+    makeReview,
+    makeBooking
 } from '../utils/housing_util';
 
 export const RECEIVE_HOUSINGS = 'RECEIVE_HOUSINGS';
 export const RECEIVE_HOUSING = 'RECEIVE_HOUSING';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 
 export const receiveHousings = housings => {
     return {
@@ -25,6 +27,18 @@ export const receiveReview = ({ review, average_rating }) => ({
     review,
     average_rating,
 });
+
+export const receiveBooking = ({ booking }) => ({
+    type: RECEIVE_BOOKING,
+    booking,
+});
+
+
+export const createBooking = booking => dispatch => (
+    makeBooking(booking).then(booking => (
+        dispatch(receiveBooking(booking))
+    ))
+);
 
 export const createReview = review => dispatch => (
     makeReview(review).then(review => (

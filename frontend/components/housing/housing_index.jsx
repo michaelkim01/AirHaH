@@ -22,15 +22,23 @@ class HousingIndex extends React.Component {
     return (
         <div className="housing-index-page">
             <div className="housing-index">
-                <h1>Stays in New York: </h1>
+                <h1>Stays in New York </h1>
                 {this.props.housings.map(housing => (
                     <div className="housing-element" key={housing.id} onClick={() => this.handleClick(housing.id)}>
                         <img src={housing.photoUrl} />
-                        <div>
-                            <p>{housing.housing_type} in {housing.city}</p>
-                            <p id="housing-name" >{housing.name}</p>
-                            <p>{housing.guests} guests  {housing.bedrooms} bedroom/s {housing.beds} bed/s {housing.baths} bath/s</p>
-                            <p id="housing-price">${housing.price} / night</p>
+                        <div className="housing-info">
+                            <div className="head">
+                                <p>{housing.housing_type} in {housing.city}</p>
+                                <p id="housing-name" >{housing.name}</p>
+                                <p>{housing.guests} guests  {housing.bedrooms} bedroom/s {housing.beds} bed/s {housing.baths} bath/s</p>
+                            </div>
+                            <div className="rating-and-price">
+                                <div className="average-rating">
+                                    <i class="fas fa-star"></i>
+                                    <h3>{housing.average_rating} ({housing.reviews.length})</h3>
+                                </div>
+                                <p id="housing-price">${housing.price} / night</p>
+                            </div>
                         </div>
                     </div>
                 ))}

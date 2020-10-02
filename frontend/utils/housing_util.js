@@ -19,3 +19,11 @@ export const makeReview = review => (
         data: { review }
     })
 );
+
+export const makeBooking = booking => (
+    $.ajax({
+        method: 'POST',
+        url: 'api/bookings',
+        data: { booking }
+    })
+);

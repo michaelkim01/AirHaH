@@ -35,6 +35,11 @@ class Housing < ApplicationRecord
         foreign_key: :housing_id,
         class_name: :Review
 
+    has_many :bookings,
+        primary_key: :id,
+        foreign_key: :housing_id,
+        class_name: :Booking
+
     def average_rating
         reviews.average(:rating)
     end

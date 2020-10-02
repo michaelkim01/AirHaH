@@ -27,6 +27,11 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Review
 
+    has_many :bookings,
+        primary_key: :id,
+        foreign_key: :guest_id,
+        class_name: :Booking
+
     after_initialize :ensure_session_token!
 
     attr_reader :password
