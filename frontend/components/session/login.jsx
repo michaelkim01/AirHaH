@@ -10,6 +10,7 @@ class Login extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleInput(type) {
@@ -20,6 +21,14 @@ class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.login(this.state)
+            .then(this.props.closeModal);
+    }
+
+    demoLogin() {
+        e.preventDefault();
+        this.state.email = "andy@email.com";
+        this.state.password = "password";
         this.props.login(this.state)
             .then(this.props.closeModal);
     }
@@ -71,6 +80,7 @@ class Login extends React.Component {
                     <text>Don't have an account?</text>
                     <Link to='/'>Sign up</Link>
                 </div>
+                <button className="demo-login" onClick={this.demoLogin}>Demo User Login</button>
             </div>
         );
     }
