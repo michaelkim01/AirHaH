@@ -47,7 +47,7 @@ class HousingIndex extends React.Component {
                     <div id="left-div">
                         <p>c 2020 Airbnb, Inc. All rights reserved</p>
                         <a href="https://github.com/michaelkim01/AirHaH">Github</a>
-                        <p>linkdIn</p>
+                        <a href="https://www.linkedin.com/in/michael-yonghwan-kim/">LinkedIn</a>
                         <p>Sitemap</p>
                     </div>
                     <div id="right-div">
