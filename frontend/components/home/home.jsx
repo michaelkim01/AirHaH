@@ -52,7 +52,7 @@ class HousingIndex extends React.Component {
                     </div>
                     <div id="right-div">
                         <p>English</p>
-                        <p>$ USD</p>
+                        <p>$USD</p>
                         <p>Facebook Icon</p>
                         <p>Twitter Icon</p>
                         <p>Instagram Icon</p>
