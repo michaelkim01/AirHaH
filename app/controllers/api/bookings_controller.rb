@@ -1,5 +1,9 @@
 class Api::BookingsController < ApplicationController
-    before_action :ensure_logged_in!, only: [:create]
+    before_action :ensure_logged_in!, only: [:index, :create, :destroy]
+
+    def index
+        
+    end
 
     def create
         @booking = Booking.new(booking_params)
@@ -8,6 +12,10 @@ class Api::BookingsController < ApplicationController
         else
             render json: ['Incomplete Booking'], status: 403
         end
+    end
+
+    def destroy
+
     end
 
     private

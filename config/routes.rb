@@ -22,7 +22,10 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resources :housings, only: [:show, :index]
     resources :reviews, only: [:create]
-    resources :bookings, only: [:create]
+    # resources :bookings, only: [:create]
     resource :session, only: [:create, :destroy]
+    resources :users do 
+      resources :bookings
+    end
   end
 end
