@@ -9,7 +9,6 @@ export default ({ currentUser, logout, openModal }) => {
         </div>
     ) : (
         <div>
-            <button onClick={}>My Reservations</button>
             <button onClick={() => openModal('signup')}>Sign up</button>
             <button onClick={() => openModal('login')}>Log in</button>
         </div>
