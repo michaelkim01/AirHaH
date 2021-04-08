@@ -25,5 +25,3 @@ export default ({ currentUser, logout, openModal }) => {
         </header>
     );
 };
-
-

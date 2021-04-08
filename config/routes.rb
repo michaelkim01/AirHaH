@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     # resources :bookings, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :users do 
-      resources :bookings
+      resources :bookings, only: [:create, :destroy]
     end
   end
 end
